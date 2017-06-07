@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>欢迎登陆Dragon Spirit</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="font/iconfont.css">
+		<link rel="stylesheet" type="text/css" href="css/register.css"/>
+	</head>
+	<body>
+		<div class="container">
+		    <form class="form-signin">
+		        <h2 class="form-signin-heading">普通注册</h2>
+		        <label for="inputText" class="sr-only" onblur="Isusername" >用户名</label>
+		        <input type="text" id="inputText1" class="form-control" placeholder="用户名" required autofocus><span class="Notusername"></span>
+		        <input type="email" id="inputEmail" class="form-control" placeholder="邮箱" required autofocus><span class="Notemail"></span>
+		        <label for="inputPassword" class="sr-only">密码</label>
+		        <input type="password" id="inputPassword" class="form-control" placeholder="密码" required><p class="Notpassword"></p>
+		        <input type="text" id="inputText2" class="form-control" placeholder="验证码" required autofocus><p class="Noyangzm"></p><span id="img1"><img id="validateCodeImg" src="http://www.fengbuy.com/ucenter-client/index/validateCode/" onclick="refreshValidateCode();" /></span><a class="mohu">看不清？换一张</a>
+		        <div class="checkbox">
+		          <label>
+		            <input type="checkbox" value="remember-me"> 记住账号密码
+		          </label>
+		        </div>
+		        <button class="btn btn-lg btn-primary btn-block" type="submit" id="register">注册</button>
+		    </form>
+		    <div class="back">
+			    <i class="iconfont icon-left"></i>
+			    <a href="index.html">返回首页</a>
+		    </div>
+	    </div> 
+		   <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+		   <script type="text/javascript">
+		   	$(function(){
+		   		//图片验证码
+		   		$(".mohu").on("click",refreshValidateCode)
+				function refreshValidateCode(){
+				var ran=Math.random()
+				console.log(ran)
+					$("#validateCodeImg").attr("src",'http://www.fengbuy.com/ucenter-client/index/validateCode/?'+ran);
+				    $("#validateCode").focus();
+				}
+		   		var reg_u=/^[a-z0-9_-]{3,16}$/,
+		   			reg_e=/^[a-z\d]+(\.[a-z\d]+)*@([\da-z](-[\da-z])?)+(\.{1,2}[a-z]+)+$/,
+		   			reg_p=/^[a-z0-9_-]{6,18}$/;
+
+				//通过正则表达式验证
+				//用户名验证
+	   			$("#inputText1").on("blur",function Isusername (){
+						_username=$(this).val();
+					if (!reg_u.test(_username)) {
+						$(".Notusername").html("请输入正确格式的用户名")
+					}else{
+						//用户名数据库验证：
+		   				var _username=$(this).val()
+		   				$.ajax({
+		   					url:"php/register.php",
+		   					type:"post",
+		   					data:{
+		   						username:_username
+		   					},
+		   					dataType:"json",
+		   					success:function(data){
+		   						if (data.status===0) {
+		   							$(".Notusername").html("")
+		   						}else{
+		   							$(".Notusername").html("用户名已存在")
+		   						}
+		   					}
+		   				})			   						   		
+					}
+				})
+				//邮箱验证
+	   			$("#inputEmail").on("blur",function Isusername (){
+					_email=$(this).val();
+					if (!reg_e.test(_email)) {
+						$(".Notemail").html("请输入正确格式的邮箱")
+					}else{
+						$(".Notemail").html("")
+					}		
+	  			})
+				//密码验证
+	   			$("#inputPassword").on("blur",function Isusername (){
+					_password=$(this).val();
+					if (!reg_p.test(_password)) {
+						$(".Notpassword").html("请输入正确格式的密码")
+					}else{
+						$(".Notpassword").html("")
+					}		
+	  			})
+	  			//验证码
+	  			$("#inputText2").on("blur",function(){
+	  				_yanzhengma=$(this).val();
+	  					console.log(_yanzhengma)
+	  				if (!_yanzhengma) {
+	  					$(".Noyangzm").html("请输入验证码")
+	  				}else{
+	  					$(".Noyangzm").html("")
+	  				}
+	  			})
+	   			//取消登陆默认事件
+	   			$(".form-signin").on("submit",function(){
+	   				return false;
+	   			})
+
+	   			//若用户名不存在，通过php向数据库提交数据
+	   			$("#register").on("click",function(){
+		   			var _username=$("#inputText1").val(),
+		   				_password=$("#inputPassword").val(),
+		   				_email=$("#inputEmail").val(),
+		   				_yanzhengma=$("#inputText2").val();
+		   			//用户名、密码、邮箱正则都通过（且验证码不为空即可）提交服务器	
+		   			if (reg_p.test(_password)&&reg_u.test(_username)&&reg_e.test(_email)&&$("#inputText2").val()){
+		   				console.log("通过正则验证")
+		   				$.ajax({
+		   					url:"php/register.php",
+		   					type:"post",
+		   					data:{
+		   						username:_username,
+		   						password:_password,
+		   						email:_email
+		   					},
+		   					dataType:"json",
+		   					success:function(){
+		   						if (confirm("恭喜，注册成功!请登录~")) {
+		   							location="login.html"
+		   						}
+		   					}
+		   				})
+		   			}
+	   			})
+		   	})
+		   </script>
+	</body>
+</html>

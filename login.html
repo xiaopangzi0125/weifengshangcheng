@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>欢迎登陆Dragon Spirit</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="font/iconfont.css">
+		<link rel="stylesheet" type="text/css" href="css/login.css"/>
+		<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+		<script type="text/javascript" src="js/jquery.cookie.js"></script>
+	</head>
+	<body>
+		<div class="container">
+		    <form class="form-signin" action="index.php" method="post">
+		        <h2 class="form-signin-heading">欢迎登陆</h2>
+		        <label for="inputText" class="sr-only" >用户名</label>
+		        <input type="text" id="inputText" class="form-control" placeholder="用户名" required autofocus><span class="Notusername"></span>
+		        <label for="inputPassword" class="sr-only">密码</label>
+		        <input type="password" id="inputPassword" class="form-control" placeholder="密码" required><span class="Notpassword"></span>
+		        <div class="checkbox">
+		          <label>
+		            <input type="checkbox" value="remember-me" class="remember" checked> 记住账号密码
+		          </label>
+		        </div>
+		        <button class="btn btn-lg btn-primary btn-block" type="submit" id="login">登录</button>
+		    </form>
+		    <div class="back">
+			    <i class="iconfont icon-left"></i>
+			    <a href="index.html">返回首页</a>
+		    </div>
+		</div> 
+
+
+
+		   <script type="text/javascript">
+		   		$(function(){
+		   			//用户名正则验证
+		   			$("#inputText").on("blur",function  (){
+						var username=$(this).val(),
+							reg=/^[a-z0-9_-]{3,16}$/;
+			   				// console.log(username)
+						if (!reg.test(username)) {
+							$(".Notusername").html("请输入正确格式的用户名")
+						}else{
+							$(".Notusername").html("")
+						}
+					})
+
+		   			//取消登陆默认事件
+		   			$(".form-signin").on("submit",function(){
+		   				return false;
+		   			})
+
+		   			//登陆服务器验证
+		   			$("#login").on("click",function(){
+		   				var _username=$("#inputText").val(),
+		   					_password=$("#inputPassword").val();
+		   				$.ajax({
+		   					type:"post",
+		   					url:"php/login.php",
+		   					dataType:"json",
+		   					data:{
+		   						username:_username,
+		   						password:_password
+		   					},
+		   					success:function(data){
+		   						if(data.status===0){
+		   							$(".Notpassword").html("用户名或密码错误")
+		   						}else{
+		   							alert("登陆成功，正在跳转~")
+		   							location="index.html"
+		   							//点击记住密码，添加信息到cookie
+						   			if ($(".remember").prop("checked")){
+							   			$.cookie.json = true;
+							   			var _message={
+							   				username:_username,
+						   					password:_password
+							   			}
+							   			$.cookie("login",_message,{expires:7,path:"/"})		
+						   			}
+		   						}
+		   					}
+		   				})  				
+		   			})
+		   		})
+		   </script>
+	</body>
+</html>

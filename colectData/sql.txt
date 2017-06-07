@@ -1,0 +1,10 @@
+添加到商品sql语句
+INSERT INTO  `dragon`.`productsmsg`VALUES (NULL ,  'images/tem19',  'MCDODO 软边钢化膜	',  '适配7p',  '￥29');
+INSERT INTO  `dragon`.`productsmsg` VALUES (NULL ,  'images/tem20',  'MCDODO 软边钢化膜	',  '适配7p',  '￥29');
+INSERT INTO  `dragon`.`productsmsg`VALUES (NULL ,  'images/tem19',  'MCDODO 软边钢化膜	',  '适配7p',  '￥29');
+INSERT INTO  `dragon`.`productsmsg` VALUES (NULL ,  'images/tem20',  'MCDODO 软边钢化膜	',  '适配7p',  '￥29');
+INSERT INTO  `dragon`.`productsmsg`VALUES (NULL ,  'images/tem19',  'MCDODO 软边钢化膜	',  '适配7p',  '￥29');
+INSERT INTO  `dragon`.`productsmsg` VALUES (NULL ,  'images/tem20',  'MCDODO 软边钢化膜	',  '适配7p',  '￥29');
+INSERT INTO  `dragon`.`productsmsg`VALUES (NULL ,  'images/tem19',  'MCDODO 软边钢化膜	',  '适配7p',  '￥29');
+INSERT INTO  `dragon`.`productsmsg` VALUES (NULL ,  'images/tem20',  'MCDODO 软边钢化膜	',  '适配7p',  '￥29');
+

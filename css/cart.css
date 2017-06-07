@@ -1,0 +1,48 @@
+.wrap{padding: 0;}
+.cart_left{width: 78%;border:1px solid #eee;float: left;border-radius: 6px;overflow: hidden;min-height: 600px;margin-bottom: 20px;}
+.cart_left .p_header,.cart_right p:nth-of-type(1){width: 100%;background: #000;color: #fff;height: 30px;line-height: 30px;}
+.cart_left .p_header{padding-left: 26px;padding-right: 26px;}
+.cart_left .p_header span{color: #ff0;font-size: 12px;margin-left: 114px;}
+.icon-cart{margin-right: 8px;}
+.cart_left button{color: #000;}
+.back2{float: right;height: 30px;}
+.cart_right{width:18%;border:1px solid #eee;float: right;border-radius: 6px;overflow: hidden;}
+.cart_right p:nth-of-type(1){font-size: 18px;text-indent: 4px;}
+
+.cart_order{display: flex;justify-content: space-around;border-bottom: 1px solid #476db9;}
+.cart_order li{float: left;width: 60px;}
+.cart_order li:nth-of-type(2){width: 80px;}
+.cart_order li:nth-of-type(3){width: 300px;}
+.cart_order li:nth-of-type(5){width: 100px;}
+.cart_product li:nth-of-type(6){color: red;width: 90px;}
+.cart_product li:nth-of-type(2) img{width: 80px;
+    /* height: 80px; */
+    /* border: 1px saddlebrown; */
+    border: 1px solid #C8F;
+    margin-top: -10px;}
+.cart_product li:nth-of-type(3){text-indent: 27px;}    
+.danjia,.amount,.xiaoji{text-align: right;}
+.cart_product .icon-shanchu{font-size: 20px}
+
+.clearing{width: 100%;height: 150px;background: #fff7e6;margin: 0 auto;border:1px solid #ebdfc7;}
+.clearing_right{width: 50%;float: right;}
+.clearing_right p:nth-of-type(2){font-size: 18px;font-weight: bold;}
+.clearing_right span{color: red;}
+.clearing_left{width: 10px;}
+/*.clearing_right p:nth-of-type(1) span{display: block;}*/
+.clearing_right p:nth-of-type(3){height: 32px;background: #50c0e6;color: #fff;line-height: 32px;text-align: center;cursor: pointer;}
+.clearing_right{text-align: right;padding: 25px 21px 0 0;}
+#all{vertical-align: -2px;}
+.all{margin-left: -6px;}
+.pid{display:none;}
+
+
+.button1_1,.button1_2{    width: 15px;
+    height: 15px;
+    border-radius: 6px;
+    /* vertical-align: 0px; */
+    line-height: 11px;
+    border: none;
+    outline: none;}
+.product_count{    width: 25px;
+    height: 18px;text-align: center;line-height: 18px;font-size: 10px;}    

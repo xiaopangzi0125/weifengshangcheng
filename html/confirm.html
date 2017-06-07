@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Dragon Spirit专业耳机商城</title>
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../font/iconfont.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<link rel="stylesheet" type="text/css" href="../css/cart.css">
+	<link rel="stylesheet" type="text/css" href="../css/confirm.css">
+	<script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="../js/confirm.js"></script>
+</head>
+<body>
+	<div id="header">
+		<div class="header_top_wrap">
+			<ul>
+				<li><a href="">我的订单</a></li>
+				<li><a href="">客户服务</a></li>
+				<li><a href="">手机龙魂</a><i class="iconfont icon-phone"></i></li>
+			</ul>
+			<div class="register">
+				<span>你好，请</span>
+				<b><a href="../login.html">登录</a></b>
+				<b><a href="../register.html">注册</a></b>
+			</div>
+		</div>
+		<div class="header_bottom_wrap">
+			<p><a href="../index.html" title=""><img src="../images/logo.png" alt=""></a></p>
+			<div class="nav">
+				<ul>
+					<li class="yes"><a href="../html/list.html">全部分类</a></li>
+					<li>|</li>
+					<li class="yes"><a href="../index.html">首页</a></li>
+					<li>|</li>
+					<li class="yes"><a href="">母亲节</a></li>
+					<li>|</li>
+					<li class="yes"><a href="">品牌</a></li>
+					<li>|</li>
+					<li class="yes"><a href="">新品</a></li>
+				</ul>
+			</div>
+			<div class="cart">
+				<a href="../html/cart.html" title=""><i class="iconfont icon-cart"></i>
+				<i></i><span>购物车</span></a>
+			</div>
+		</div>
+	</div>
+	<div class="wrap">
+		<div class="cart_left">
+			<p class="p_header"><i class="iconfont icon-cart"></i>结账<button class="back2">返回购物车</button></p>
+			<div class="one-step">
+				<div class="step_title">
+					<h4>
+						<span class="index">1</span>选择收货地址
+					</h4>
+				</div>
+				<div class="teap_content">
+					<button>新增收货地址</button>
+					<div class="user_adress">
+						<p>收货地址：</p>
+					</div>
+				</div>
+			</div>
+			<div class="one-step">
+				<div class="step_title">
+					<h4>
+						<span class="index">2</span>支付和配送
+					</h4>
+				</div>
+				<div class="teap_content">
+					<div class="pay">
+						<p>请选择支付方式</p>
+						<div class="pay_online click_pay cli">
+							<img src="../images/pay_online.png" alt="">
+							<i class="arrow"></i>
+						</div>
+						<div class="pay_type0 click_pay cli">
+							<b><img src="../images/pay_type_0.png" alt=""></b>
+							<span>货到付款</span>
+							<i class="arrow"></i>
+						</div>
+					</div>
+					<div class="express">
+						<p>请选择运送方式<span>商品数量满5件或商品总金额满268元顺丰包邮</span></p>
+						<div class="click_express cli">
+							<img src="../images/shunfeng.png" alt="">
+							<span>免邮费</span>
+							<i class="arrow"></i>
+						</div>
+						<div class="click_express cli">
+							<img src="../images/yt.png" alt="">
+							<span>免邮费</span>
+							<i class="arrow"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="one-step">
+				<div class="step_title">
+					<h4>
+						<span class="index">3</span>使用优惠工具
+					</h4>
+				</div>
+				<div class="teap_content">
+					<p><input type="checkbox" name="">使用优惠券</p>
+				</div>
+			</div>
+			<div class="one-step">
+				<div class="step_title">
+					<h4>
+						<span class="index">4</span>发票服务
+					</h4>
+				</div>
+				<div class="teap_content">
+					<p>不需要发票<span>【修改】</span></p>
+				</div>
+			</div>
+			<div class="one-step">
+				<div class="step_title">
+					<h4>
+						<span class="index">5</span>备注说明
+					</h4>
+				</div>
+				<div class="teap_content">
+					<p>添加备注：（对订单的要求或特别注明）</p>
+					<textarea name="" id="" cols="100" rows="2" placeholder="剩余120字"></textarea>
+				</div>
+			</div>
+			<div class="one-step">
+				<div class="step_title">
+					<h4>
+						<span class="index">6</span>商品清单
+					</h4>
+				</div>
+				<div class="teap_content">
+					<ul class="list">
+						<li>商品编号</li>
+						<li>商品名</li>
+						<li>价格</li>
+						<li>库存状态</li>
+						<li>数量</li>
+					</ul>
+				</div>
+			</div>
+			<div class="clearing">
+				<div class="clearing_left">
+					<h2>结算</h2>
+					<p>可获得165积分，交易完成后发放</p>
+				</div>
+				<div class="clearing_right">
+					<p>商品金额小计：¥<b id="pro_total">0</b><span>运费：¥0</span></p>
+					<p>订单实付：¥<b id="total">0.00</b></p>
+					<p id="submit">提交订单</p>
+				</div>
+			</div>	
+		</div>
+		<div class="cart_right">
+			<p>购物车摘要</p>
+		</div>
+	</div>
+	<div id="footer">
+		<div class="icon-wrap">
+			<div class="icon">
+				<p><i class="iconfont icon-mian1"></i><a href="">全国包邮</a></p>
+				<p><i class="iconfont icon-7"></i></i><a href="">七天无理由退换</a></p>
+				<p><i class="iconfont icon-30"></i></i><a href="">30天内服务保障</a></p>
+				<p><i class="iconfont icon-zheng"></i></i><a href="">正品保障</a></p>
+			</div>
+		</div>		
+		<div class="nav1">
+			<div><p>购物指南</p>
+				<ul>
+					<li><a href="">用户注册</a></li>
+					<li><a href="">发票制度</a></li>
+					<li><a href="">会员及积分制度</a></li>
+					<li><a href="">现金卡说明</a></li>
+				</ul>
+			</div>
+			<div><p>配送与收货</p>
+				<ul>
+					<li><a href="">配送方式</a></li>
+					<li><a href="">配送范围及时间</a></li>
+					<li><a href="">签收注意事项</a></li>
+					<li><a href="">运费说明</a></li>
+				</ul>
+			</div>
+			<div><p>支付方式</p>
+				<ul>
+					<li><a href="">货到付款</a></li>
+					<li><a href="">在线支付</a></li>
+					<li><a href="">公司转账</a></li>
+				</ul>
+			</div>
+			<div><p>售后服务</p>
+				<ul>
+					<li><a href="">退换货政策</a></li>
+					<li><a href="">如何退换货</a></li>
+					<li><a href="">价格保护</a></li>
+					<li><a href="">退款说明</a></li>
+					<li><a href="">账户余额提现政策</a></li>
+					<li><a href="">正品保障及赔付承诺</a></li>
+				</ul>
+			</div>
+			<div><p>常见问题</p>
+				<ul>
+					<li><a href="">账户类</a></li>
+					<li><a href="">购物类</a></li>
+					<li><a href="">支付类</a></li>
+					<li><a href="">退换货与退款</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="nav2">
+			<a href=""><span>联系我们</span></a>|<a href=""><span>赫兹声学</span></a>|<a href=""><span>友情链接</span></a>
+		</div>
+		<div class="copy">
+			@Copyright 2013-2017 <a href="">龙魂耳机</a>版权所有
+		</div>
+		<div class="cover"></div>
+		<div class="adress">
+			<p>新增收货地址</p>
+			<div class="content">
+				<b>收货人：</b><input type="text" name="" class="name"><br>
+				<b>地址：</b><select name="" id="provence"></select>省
+							 <select name="" id="city"></select>市 
+							 <select name="" id="district"></select>县/区<br>
+				<b>街道地址：</b><textarea name="" id="more" cols="60" rows="1"></textarea><br>
+				<b class="youbian">邮编：</b><input type="text" placeholder="6位数字" maxlength="6"><br>
+				<b>手机号：</b><input type="text" placeholder="手机号码" class="phone" maxlength="11"><br>
+			</div>
+			<div class="adress_b">
+				<button type="" id="comfirm">确定</button>
+				<button class="cancle">取消</button>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

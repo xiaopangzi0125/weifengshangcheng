@@ -1,0 +1,77 @@
+html,body{
+	height: 100%;
+	width: 100%;
+}
+.container{
+	background:rgba(0,0,0,0.5);
+	color: #fff; 
+
+    width: 100%;
+    height: 100%;
+    }
+.container .form-signin{
+	position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 600px;
+    height: 450px;
+}  
+body {
+
+   
+	background:  url(../images/register-bg2.jpg) no-repeat center ;
+	background-size: 100%;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+#inputText1,#inputEmail,#inputPassword,#inputText2{    margin-bottom: 4px}
+#inputText2{width: 100px;float: left;}
+.form-signin-heading{text-align: center;}
+#img1{height: 46px;width: 80px;background-size: 100%;float: left;}
+.mohu{height: 50px;line-height: 50px;color: #fff;float: right;}
+.mohu:hover{color: green;cursor: pointer;}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+  clear: both;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.Notusername,.Notpassword,.Notemail{color: red;}
+
+.back a{color: #fff;vertical-align: 4px;margin-left: -6px;}
+.container .icon-left{font-size: 24px;}
+.back:hover{color: red;}
+.back:hover a{color: red;}
+.Noyangzm{color: red;}
